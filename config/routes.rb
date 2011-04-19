@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # Add your extension routes here
+  namespace :admin do
+    get 'shop_socially' => 'shop_socially#index'
+    put 'update_shop_socially'=> 'shop_socially#update'
+  end
 end

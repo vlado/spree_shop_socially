@@ -1,0 +1,22 @@
+<h1>Shop Socially Configuration</h1>
+
+<%= form_tag admin_update_shop_socially_path, :method => :put do %>
+  
+  <p>
+    <label>
+	  <input name="preferences[shop_socially_enabled]" type="hidden" value="0" />
+      <%= check_box_tag('preferences[shop_socially_enabled]', "1", Spree::Config[:shop_socially_enabled]) %>
+      Enable ShopSocially
+    </label>
+  </p>
+  
+  <p>
+	  <label>ShopSocially Account ID</label>
+	<%= text_field_tag('preferences[shop_socially_id]', Spree::Config[:shop_socially_id])%>
+  </p>
+  
+  <p class="form-buttons">
+    <%= button t('update') %>
+  </p>
+  
+<% end %>
